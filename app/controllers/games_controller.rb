@@ -14,7 +14,7 @@ class GamesController < ApplicationController
     if !attempt.upcase.split("").all? { |lttr| attempt.upcase.count(lttr) <= letters.count(lttr) }
       result = "Woops... #{@attempt} does not come from the grid!"
     else
-      result = "Nice, well done!"
+      result = "Nice, #{@attempt} is a valid English word. Well done!"
     end
     result
   end
