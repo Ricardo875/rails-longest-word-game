@@ -12,7 +12,7 @@ class GamesController < ApplicationController
 
   def game(attempt, letters)
     if !attempt.upcase.split("").all? { |lttr| attempt.upcase.count(lttr) <= letters.count(lttr) }
-      result = "#{@attempt} does not come from the grid!"
+      result = "Woops... #{@attempt} does not come from the grid!"
     else
       result = "Nice, well done!"
     end
