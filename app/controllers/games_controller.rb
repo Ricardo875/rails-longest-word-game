@@ -6,17 +6,17 @@ class GamesController < ApplicationController
 
   def score
     @letters = params[:letters]
-    @attempt = params[:attempt]
+    @attempt = params[:attempt].upcase
+    @result = game(@attempt, @letters)
   end
 
-  def game
-
+  def game(attempt, letters)
+    if !attempt.upcase.split("").all? { |lttr| attempt.upcase.count(lttr) <= letters.count(lttr) }
+      result = "#{@attempt} does not come from the grid!"
+    else
+      result = "Nice, well done!"
+    end
+    result
   end
-
-  MESSAGES = {
-    message1: "Hmmm, #{@attempt} does not come from the grid.",
-    message2: "#Huh...{@attempt}? That's not an English word mate.",
-    message3: "Well done!"
-  }
 
 end

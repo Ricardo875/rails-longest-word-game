@@ -5,6 +5,7 @@
 
 <form action="/score" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" style="width:300px" name="letters" placeholder="What is the longest word you can find?">
+  <input type="hidden" name="letters" value="<%= @letters.join %>">
+  <input type="text" style="width:300px" name="attempt" placeholder="What is the longest word you can find?">
   <input type="submit" value="Play">
 </form>
