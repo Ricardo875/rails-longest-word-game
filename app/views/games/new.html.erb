@@ -1,0 +1,10 @@
+<!-- {"message":"welcome","endpoints":["https://wagon-dictionary.herokuapp.com/:word","https://wagon-dictionary.herokuapp.com/autocomplete/:stem"],"total_api_hits":1363731,"words_found":895254,"autocomplete_hits":203960}
+ -->
+<h1>New game</h1>
+<p><%= @letters %></p>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" style="width:300px" name="letters" placeholder="What is the longest word you can find?">
+  <input type="submit" value="Play">
+</form>
